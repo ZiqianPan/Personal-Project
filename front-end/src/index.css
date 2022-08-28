@@ -1,0 +1,100 @@
+body {
+  font-family: "Overlock", cursive;
+}
+
+h1 {
+  font-family: "Carter One", cursive;
+}
+
+main {
+  width: 90%;
+  margin: 0;
+}
+
+nav {
+  background-color: rgb(37, 36, 34);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 45px;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(235, 94, 40);
+}
+
+h4 {
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+.Snacks div {
+  width: 150px;
+  padding: 15px;
+  background-color: rgb(255, 252, 242);
+}
+
+.Snacks article {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  padding: 15px;
+}
+
+
+.new {
+display: grid;
+grid-template-columns: repeat(6,1fr);
+}
+
+.edit {
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+}
+
+
+.HealthSnackText {
+  text-align: left;
+  display: grid;
+  grid-column: 1/3;
+  padding: 15px;
+  margin:10px;
+}
+
+form {
+  display: grid;
+  grid-column: 3/7;
+}
+
+
+.Snack {
+margin:20px;
+/* padding: 30px; */
+ 
+}
+
+#SnacksText {
+width: 100%;
+text-align: center;
+
+}
+
+
+.Heart {
+  text-align: left;
+}
+
+.show {
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: space-around;
+  grid-template-columns: repeat(5,1fr);
+  flex-wrap: wrap;
+}
+
+.ShowText{
+  text-align: center;
+}
