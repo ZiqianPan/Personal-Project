@@ -1,5 +1,8 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
+import Login from "../src/Login"
+
 
 // PAGES
 import Edit from "./Pages/Edit";
@@ -14,26 +17,37 @@ import NavBar from "./Components/NavBar";
 
 import { UserProvider } from "./UserProvider";
 
+import Dashboard from "./Dashboard";
+
+const code = new URLSearchParams(window.location.search).get('code');
+
 function App() {
-  return (
-    <div className="App">
-       <UserProvider>
-       <Router>
-        <NavBar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/snacks" element={<Index />} />
-            <Route path="/snacks/new" element={<New />} />
-            <Route exact path="/snacks/:id" element={<Show />} />
-            <Route path="/snacks/:id/edit" element={<Edit />} />
-            <Route path="*" element={<FourOFour />} />
-          </Routes>
-        </main>
-      </Router>
-       </UserProvider>
-    </div>
-  );
+ return code ? <Dashboard code = {code}/> : <Login/>
+
+
+//   return (
+//     <div className="App">
+//       <Login />
+      
+      
+// {/*       
+//        <UserProvider>
+//        <Router>
+//         <NavBar />
+//         <main>
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/snacks" element={<Index />} />
+//             <Route path="/snacks/new" element={<New />} />
+//             <Route exact path="/snacks/:id" element={<Show />} />
+//             <Route path="/snacks/:id/edit" element={<Edit />} />
+//             <Route path="*" element={<FourOFour />} />
+//           </Routes>
+//         </main>
+//       </Router>
+//        </UserProvider> */}
+//     </div>
+//   );
 }
 
 export default App;
