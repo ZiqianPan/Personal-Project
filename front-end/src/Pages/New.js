@@ -1,10 +1,11 @@
-import SnackNewForm from "../Components/SnackNewForm";
+import SongNewForm from "../Components/SongNewForm";
+import { useNavigate } from "react-router-dom";
 
 function New() {
   return (
     <div className="New">
-      <h1>New Snacks</h1>
-      <SnackNewForm />
+      <h1>New Songs</h1>
+      <SongNewForm />
     </div>
   );
 }

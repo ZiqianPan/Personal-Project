@@ -1,10 +1,10 @@
-import Snacks from "../Components/Snacks";
+import Songs from "../Components/Songs";
 
 function Index() {
   return (
     <div className="Index">
       <h2>Index Page</h2>
-      <Snacks />
+      <Songs />
     </div>
   );
 }

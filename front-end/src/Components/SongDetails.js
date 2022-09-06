@@ -7,16 +7,16 @@ import HeartHealth from "./HeartHealth";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function SnackDetails() {
-  const [snack, setSnacks] = useState([]);
+export default function SongDetails() {
+  const [song, setSongs] = useState([]);
   let { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get(`${API}/snacks/${id}`)
+      .get(`${API}/songs/${id}`)
       .then((response) => {
-        setSnacks(response.data.payload);
+        setSongs(response.data.payload);
       })
       .catch(() => {
         navigate("/not found");
@@ -25,9 +25,9 @@ export default function SnackDetails() {
 
   const handleDelete = () => {
     axios
-      .delete(`${API}/snacks/${id}`)
+      .delete(`${API}/songs/${id}`)
       .then(() => {
-        navigate("/snacks");
+        navigate("/songs");
       })
       .catch(() => {
         console.warn("error");
@@ -37,12 +37,12 @@ export default function SnackDetails() {
   return (
     <div className="show">
       <aside>
-      <HeartHealth snackHealth={snack.is_healthy}/>
+      {/* <HeartHealth snackHealth={snack.is_healthy}/> */}
       </aside>
 
       <article>
         <div>
-          <img src={snack.image} alt={snack.name} />
+          <img src={song.albumurl} alt={song.title} />
         </div>
       </article>
 
@@ -50,31 +50,31 @@ export default function SnackDetails() {
         <div>
           <p>
             {" "}
-            <strong>Name:</strong> {snack.name}
+            <strong>Title:</strong> {song.title}
           </p>
           <p>
             {" "}
-            <strong>Fiber:</strong> {snack.fiber}{" "}
+            <strong>Artist:</strong> {song.artist}{" "}
           </p>
           <p>
             {" "}
-            <strong>Protein:</strong> {snack.protein}{" "}
+            <strong>Duration:</strong> {song.duration}{" "}
           </p>
           <p>
             {" "}
-            <strong>Added Sugar:</strong> {snack.added_sugar}{" "}
+            <strong>Is liked:</strong>  {song.liked ? <span>⭐️</span> : "Nope"}
           </p>
         </div>
       </article>
 
       <div className="showNavigation">
         <div>
-          <Link to={`/snacks`}>
+          <Link to={`/songs`}>
             <button className="show_button">Back</button>
           </Link>
         </div>
         <div>
-          <Link to={`/snacks/${snack.id}/edit`}>
+          <Link to={`/songs/${song.id}/edit`}>
             <button className="show_button">Edit</button>
           </Link>
         </div>

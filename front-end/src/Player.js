@@ -11,11 +11,13 @@ useEffect(() => setPlay(true), [trackUri])
   return (
     <SpotifyPlayer
       token={accessToken}
+      showSaveIcon
       callback={state => {
         if(!state.isPlaying) setPlay(false);
       }}
+      
       play={play}
-      showSaveIcon
+   
       uris={trackUri ? [trackUri] : []}
     />
   );

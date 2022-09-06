@@ -1,0 +1,31 @@
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import HeartHealth from "./HeartHealth";
+const API = process.env.REACT_APP_API_URL;
+
+function Song({ song }) {
+  return (
+    <div className="singleCard Song">
+      <span className="IndexHeart">
+        {/* <HeartHealth songHealth={song.is_healthy}  />  */}
+      </span>
+      <img src={song.albumurl} alt={song.title} width="200px" />
+
+      <a href={`/songs/${song.id}`} rel="noreferrer">
+        <h4>
+          {song.title} by {song.artist}{" "}
+        </h4>
+      </a>
+
+      <h4>
+        <a href={song.uri}> Click Here to listen</a>
+      
+        {/* {song.duration} */}
+      </h4>
+      <h4>   {song.liked ? <p>♥</p> : <p>♡</p>}</h4>
+    </div>
+  );
+}
+
+export default Song;

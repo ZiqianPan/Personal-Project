@@ -17,6 +17,8 @@ export default function Dashboard({ code }) {
   const [playingTrack, setPlayingTrack] = useState();
   const [lyrics, setLyrics] = useState("");
   //   console.log(searchResults)
+//
+  window.history.pushState({}, null, "/dashboard")
 
 function chooseTrack(track) {
     setPlayingTrack(track)
@@ -46,6 +48,7 @@ useEffect(() => {
     spotifyApi.setAccessToken(accessToken);
   }, [accessToken, search]);
 
+
   useEffect(() => {
     if (!search) return setSearchResults([]);
     if (!accessToken) return;
@@ -57,6 +60,8 @@ useEffect(() => {
 
       setSearchResults(
         res.body.tracks.items.map((track) => {
+console.log(track)
+
           const smallestAlbumImage = track.album.images.reduce(
             (smallest, image) => {
               if (image.height < smallest.height) return image;
@@ -70,6 +75,7 @@ useEffect(() => {
             title: track.name,
             uri: track.uri,
             albumUrl: smallestAlbumImage.url,
+            duration : track.duration_ms
           };
         })
       );

@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function Edit_Song() {
+export default function SongNewForm() {
   const navigate = useNavigate();
-  let { id } = useParams();
   const [song, setSong] = useState({
     artist: "",
     title: "",
@@ -16,9 +15,13 @@ export default function Edit_Song() {
     duration: "",
   });
 
-  const updateSong = (updatedSong) => {
+  const handleTextChange = (event) => {
+    setSong({ ...song, [event.target.id]: event.target.value });
+  };
+
+  const addSong = (newSong) => {
     axios
-      .put(`${API}/songs/${id}`, updatedSong)
+      .post(`${API}/songs`, newSong)
       .then(
         () => {
           navigate(`/songs`);
@@ -28,40 +31,17 @@ export default function Edit_Song() {
       .catch((c) => console.warn("catch", c));
   };
 
-  const handleTextChange = (event) => {
-    setSong({ ...song, [event.target.id]: event.target.value });
-  };
-
-  useEffect(() => {
-    axios
-      .get(`${API}/songs/${id}`)
-      .then((response) => {
-        setSong(response.data.payload);
-      })
-      .catch((err) => {
-        console.warn(err);
-      });
-  }, [id]);
-
   const handleCheckboxChange = () => {
     setSong({ ...song, liked: !song.liked });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateSong(song, id);
+    addSong(song);
   };
 
   return (
-    <div className="edit">
-      <div className="HealthSongText">
-        <p>Song Health is determined by</p>
-        <ul>
-          <li>Protein is above 5</li>
-          <li>Or Fiber is above 5</li>
-          <li>and Sugar is less than 5</li>
-        </ul>
-      </div>
+    <div className="new">
       <form onSubmit={handleSubmit}>
         <label className="new-label" htmlFor="Artist">
           Artist:
@@ -138,7 +118,6 @@ export default function Edit_Song() {
         <br />
         <input className="button" type="submit" />
       </form>
-      <br />
     </div>
   );
 }

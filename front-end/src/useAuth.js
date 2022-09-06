@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react"
 import axios from "axios";
+import { Link, useParams, useNavigate } from "react-router-dom";
+
 
 export default function useAuth(code) {
     const [accessToken, setAccessToken] = useState();
     const [refreshToken, setRefreshToken] = useState();
     const [expiresIn, setExpiresIn] = useState();
     
-    
+    const navigate = useNavigate();
+
     //get info on login. 
     useEffect(() => {
         axios
@@ -19,7 +22,7 @@ export default function useAuth(code) {
             setRefreshToken(res.data.refreshToken)
             setExpiresIn(res.data.expiresIn)
             //removes the rest of the url after our root path.
-            window.history.pushState({}, null, "/")
+            // window.history.pushState({}, null, "/")
           })
           .catch(() => {
             window.location = "/"

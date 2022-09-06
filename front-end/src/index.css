@@ -22,7 +22,8 @@ nav {
 
 a {
   text-decoration: none;
-  color: rgb(235, 94, 40);
+  color: white;
+  font: "Helvetica", arial, sans-serif;
 }
 
 h4 {
