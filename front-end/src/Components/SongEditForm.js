@@ -12,7 +12,7 @@ export default function Edit_Song() {
     title: "",
     uri: "",
     liked: false,
-    albumUrl: "",
+    album_url: "",
     duration: "",
   });
 
@@ -51,17 +51,14 @@ export default function Edit_Song() {
     event.preventDefault();
     updateSong(song, id);
   };
-
+  
   return (
     <div className="edit">
-      <div className="HealthSongText">
-        <p>Song Health is determined by</p>
-        <ul>
-          <li>Protein is above 5</li>
-          <li>Or Fiber is above 5</li>
-          <li>and Sugar is less than 5</li>
-        </ul>
+      <div>
+        
+        <img src={song.album_url} alt={song.title} height={"300px"} width={"300px"}/>
       </div>
+
       <form onSubmit={handleSubmit}>
         <label className="new-label" htmlFor="Artist">
           Artist:
@@ -72,7 +69,7 @@ export default function Edit_Song() {
           type="text"
           placeholder="Name Of the Artist"
           required
-          value={song.artist}
+          value={song.artist || ""}
           onChange={handleTextChange}
         />
 
@@ -84,7 +81,7 @@ export default function Edit_Song() {
           id="title"
           type="text"
           placeholder="Title of the Song"
-          value={song.title}
+          value={song.title || ""}
           onChange={handleTextChange}
         />
 
@@ -94,23 +91,24 @@ export default function Edit_Song() {
         <input
           className="text"
           id="uri"
-          value={song.uri}
+          value={song.uri || ""}
           type="text"
           placeholder="Spotify URI"
           onChange={handleTextChange}
           required
         />
-        <label className="new-label" htmlFor="albumUrl">
+
+        <label className="new-label" htmlFor="album_url">
           AlbumURL:
         </label>
         <input
           className="text"
-          id="albumUrl"
+          id="album_url"
           type="text"
-          name="albumUrl"
-          value={song.albumUrl}
+          value={song.album_url || ""}
           onChange={handleTextChange}
         />
+
         <label className="new-label" htmlFor="liked">
           Liked:
         </label>
@@ -118,11 +116,11 @@ export default function Edit_Song() {
           id="liked"
           type="checkbox"
           name="liked"
-          checked={song.liked}
+          checked={song.liked || false}
           onChange={handleCheckboxChange}
         />
 
-        <label className="new-label" htmlFor="albumUrl">
+        <label className="new-label" htmlFor="album_url">
           Duration:
         </label>
         <input
@@ -130,7 +128,7 @@ export default function Edit_Song() {
           id="duration"
           type="number"
           name="duration"
-          value={song.duration}
+          value={song.duration || 0}
           placeholder="duration of the song"
           onChange={handleTextChange}
         />

@@ -8,7 +8,7 @@ CREATE TABLE songs (
     artist TEXT NOT NULL,
     title TEXT NOT NULL,
     uri varchar(255),
-    albumUrl varchar(255),
+    album_url varchar(255),
     liked BOOLEAN DEFAULT false,
     duration INTEGER NOT NULL
 );
@@ -16,6 +16,6 @@ CREATE TABLE songs (
 --  artist: track.artists[0].name,
 --             title: track.name,
 --             uri: track.uri,
---             albumUrl: smallestAlbumImage.url,
+--             album_url: smallestAlbumImage.url,
 --             duration : track.duration_ms
 

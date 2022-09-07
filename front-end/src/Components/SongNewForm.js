@@ -11,7 +11,7 @@ export default function SongNewForm() {
     title: "",
     uri: "",
     liked: false,
-    albumUrl: "",
+    album_url: "",
     duration: "",
   });
 
@@ -80,15 +80,15 @@ export default function SongNewForm() {
           onChange={handleTextChange}
           required
         />
-        <label className="new-label" htmlFor="albumUrl">
+        <label className="new-label" htmlFor="album_url">
           AlbumURL:
         </label>
         <input
           className="text"
-          id="albumUrl"
+          id="album_url"
           type="text"
-          name="albumUrl"
-          value={song.albumUrl}
+          name="album_url"
+          value={song.album_url}
           onChange={handleTextChange}
         />
         <label className="new-label" htmlFor="liked">
@@ -102,7 +102,7 @@ export default function SongNewForm() {
           onChange={handleCheckboxChange}
         />
 
-        <label className="new-label" htmlFor="albumUrl">
+        <label className="new-label" htmlFor="album_url">
           Duration:
         </label>
         <input

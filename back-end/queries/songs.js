@@ -23,11 +23,11 @@ const getSong = async (id) => {
 
   //Create song 
   const createSong = async (song) => {
-    const { artist,title,uri,albumUrl,liked,duration} = song;
+    const { artist,title,uri,album_url,liked,duration} = song;
     try {
       const newSong = await db.one(
-        "INSERT INTO songs (artist,title,uri,albumUrl,liked,duration) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-        [artist,title,uri,albumUrl,liked,duration]
+        "INSERT INTO songs (artist,title,uri,album_url,liked,duration) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+        [artist,title,uri,album_url,liked,duration]
       );
       return newSong;
     } catch (error) {
@@ -47,11 +47,11 @@ const getSong = async (id) => {
 
 //udpate existing song
   const updateSong = async (song, id) => {
-    const {artist,title,uri,albumUrl,liked,duration} = song;
+    const {artist,title,uri,album_url,liked,duration} = song;
     try {
     
-      const updatedSong = await db.one("UPDATE songs SET artist = $1, title = $2, uri = $3, albumUrl = $4, liked = $5, duration = $6 WHERE id = $7 RETURNING *",
-      [artist,title,uri,albumUrl,liked,duration, id]);
+      const updatedSong = await db.one("UPDATE songs SET artist = $1, title = $2, uri = $3, album_url = $4, liked = $5, duration = $6 WHERE id = $7 RETURNING *",
+      [artist,title,uri,album_url,liked,duration, id]);
       return updatedSong;
 
     } catch (err) {

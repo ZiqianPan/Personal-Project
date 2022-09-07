@@ -29,7 +29,7 @@ songs.get("/:id", async (req, res) => {
 });
 
 
-songs.post("/", checkImage, async (req, res) => {
+songs.post("/", checkImage,  async (req, res) => {
   const { body } = req;
 
   // body.is_healthy = confirmHealth(body);
@@ -58,13 +58,13 @@ songs.delete("/:id", async (req, res) => {
   }
 });
 
-//update current snack
+//update current song
 songs.put("/:id", checkImage, async (req, res) => {
   const { id } = req.params;
   const { body } = req;
   
   // body.is_healthy = confirmHealth(body);
-  const updatedSong = await updateSong(req.body, id);
+  const updatedSong = await updateSong(body, id);
 
   if (updatedSong.id) {
     res.status(200).json(updatedSong);

@@ -12,8 +12,8 @@ const checkName = (req, res, next) => {
 };
 
 const checkImage = (req, res, next) => {
-  if (!req.body.albumUrl) {
-    req.body.albumUrl =
+  if (!req.body.album_url) {
+    req.body.album_url =
       "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
     next();
   } else {

@@ -10,7 +10,7 @@ export default function NavBar({ code }) {
       </h1>
 
       <button>
-        <Link to="/login">Listen Songs</Link>
+        <Link to="/login">Listen with Spotify</Link>
       </button>
 
       <button>

@@ -42,7 +42,8 @@ export default function SongDetails() {
 
       <article>
         <div>
-          <img src={song.albumurl} alt={song.title} />
+          {/* {console.log(song)} */}
+          <img src={song.album_url} alt={song.title} height={"300px"} width="300px" />
         </div>
       </article>
 

@@ -1,4 +1,4 @@
-import SnackEditForm from "../Components/SnackEditForm";
+import SnackEditForm from "../Components/SongEditForm";
 
 function Edit() {
   return (

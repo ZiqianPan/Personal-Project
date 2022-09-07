@@ -10,7 +10,6 @@ function Songs() {
     axios
       .get(`${API}/songs`)
       .then((response) => setSongs(response.data.payload))
-      .then(console.log(songs))
       .catch((c) => console.warn("catch", c));
   }, []);
   return (
@@ -26,5 +25,6 @@ function Songs() {
     </div>
   );
 }
+
 
 export default Songs;
