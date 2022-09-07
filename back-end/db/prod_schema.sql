@@ -1,16 +1,12 @@
-DROP DATABASE IF EXISTS snack_a_log;
-CREATE DATABASE snack_a_log; 
+DROP DATABASE IF EXISTS better_spotify;
+CREATE DATABASE better_spotify; 
 
-
-CREATE TABLE snacks (
+CREATE TABLE songs (
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
-    fiber INTEGER DEFAULT 0,
-    protein INTEGER DEFAULT 0,
-    added_sugar INTEGER DEFAULT 0,
-    is_healthy BOOLEAN, 
-    image varchar(255)
+    artist TEXT NOT NULL,
+    title TEXT NOT NULL,
+    uri varchar(255),
+    album_url varchar(255),
+    liked BOOLEAN DEFAULT false,
+    duration INTEGER NOT NULL
 );
-
-
-

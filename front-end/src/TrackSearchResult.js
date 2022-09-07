@@ -1,31 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
 export default function TrackSearchResult({ track, chooseTrack, addToIndex }) {
-  // {console.log(track)}
   const API = process.env.REACT_APP_API_URL;
-  const [addSong, SetAddSong] = useState(false);
-  const navigate = useNavigate();
-
-  const [song, setSong] = useState({
-    artist: "",
-    title: "",
-    uri: "",
-    liked: false,
-    album_url: "",
-    duration: "",
-  });
 
   function handlePlay() {
-    // console.log(track) - track has all the info I need  - i need to use it to make a
-    //post request i think.
     chooseTrack(track);
   }
 
   function handleAdd() {
     addToIndex(track);
-    // navigate("/songs");
   }
 
   return (

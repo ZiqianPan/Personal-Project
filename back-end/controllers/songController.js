@@ -2,15 +2,18 @@ const express = require("express");
 const songs = express.Router();
 
 const {
-  getAllSongs, getSong, createSong, deleteSong, updateSong
+  getAllSongs,
+  getSong,
+  createSong,
+  deleteSong,
+  updateSong,
 } = require("../queries/songs.js");
 
-const { checkName, checkImage } = require("../validations/checkSongs");
-// const confirmHealth = require("../confirmHealth");
+const { checkImage } = require("../validations/checkSongs");
 
 songs.get("/", async (req, res) => {
   const allSongs = await getAllSongs();
-  console.log(allSongs)
+  console.log(allSongs);
   if (allSongs[0]) {
     res.status(200).json({ success: true, payload: allSongs });
   } else {
@@ -28,14 +31,11 @@ songs.get("/:id", async (req, res) => {
   }
 });
 
-
-songs.post("/", checkImage,  async (req, res) => {
+songs.post("/", checkImage, async (req, res) => {
   const { body } = req;
 
-  // body.is_healthy = confirmHealth(body);
-
   try {
-    const song = await createSong(body); 
+    const song = await createSong(body);
     if (song.id) {
       res.json({ success: true, payload: song });
     } else {
@@ -45,7 +45,6 @@ songs.post("/", checkImage,  async (req, res) => {
     console.log(err);
   }
 });
-
 
 //delete function
 songs.delete("/:id", async (req, res) => {
@@ -62,8 +61,7 @@ songs.delete("/:id", async (req, res) => {
 songs.put("/:id", checkImage, async (req, res) => {
   const { id } = req.params;
   const { body } = req;
-  
-  // body.is_healthy = confirmHealth(body);
+
   const updatedSong = await updateSong(body, id);
 
   if (updatedSong.id) {

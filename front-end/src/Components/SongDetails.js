@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import HeartHealth from "./HeartHealth";
-
-
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -36,14 +33,14 @@ export default function SongDetails() {
 
   return (
     <div className="show">
-      <aside>
-      {/* <HeartHealth snackHealth={snack.is_healthy}/> */}
-      </aside>
-
       <article>
         <div>
-          {/* {console.log(song)} */}
-          <img src={song.album_url} alt={song.title} height={"300px"} width="300px" />
+          <img
+            src={song.album_url}
+            alt={song.title}
+            height={"300px"}
+            width="300px"
+          />
         </div>
       </article>
 
@@ -63,7 +60,7 @@ export default function SongDetails() {
           </p>
           <p>
             {" "}
-            <strong>Is liked:</strong>  {song.liked ? <span>⭐️</span> : "Nope"}
+            <strong>Is liked:</strong> {song.liked ? <span>⭐️</span> : "Nope"}
           </p>
         </div>
       </article>

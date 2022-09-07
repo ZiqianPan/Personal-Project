@@ -14,17 +14,14 @@ function Songs() {
   }, []);
   return (
     <div className="Songs">
-
-        <article className="Songs">
-          <h1 id="SongsText">Songs</h1>
-          {songs.map((song) => {
-            return <Song key={song.id} song={song} />;
-          })}
-        </article>
-    
+      <article className="Songs">
+        <h1 id="SongsText">Songs</h1>
+        {songs.map((song) => {
+          return <Song key={song.id} song={song} />;
+        })}
+      </article>
     </div>
   );
 }
-
 
 export default Songs;

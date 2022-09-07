@@ -1,8 +1,4 @@
-// import useAuth from "../useAuth";
-
 function Home() {
-  // const accessToken = useAuth(code);
-
   return (
     <div>
       <h2>Welcome</h2>
@@ -11,7 +7,4 @@ function Home() {
   );
 }
 
-    
-
-  
-  export default Home;
+export default Home;

@@ -12,10 +12,3 @@ CREATE TABLE songs (
     liked BOOLEAN DEFAULT false,
     duration INTEGER NOT NULL
 );
-
---  artist: track.artists[0].name,
---             title: track.name,
---             uri: track.uri,
---             album_url: smallestAlbumImage.url,
---             duration : track.duration_ms
-

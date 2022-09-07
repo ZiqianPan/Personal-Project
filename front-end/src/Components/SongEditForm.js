@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -51,12 +51,16 @@ export default function Edit_Song() {
     event.preventDefault();
     updateSong(song, id);
   };
-  
+
   return (
     <div className="edit">
       <div>
-        
-        <img src={song.album_url} alt={song.title} height={"300px"} width={"300px"}/>
+        <img
+          src={song.album_url}
+          alt={song.title}
+          height={"300px"}
+          width={"300px"}
+        />
       </div>
 
       <form onSubmit={handleSubmit}>

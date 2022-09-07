@@ -19,9 +19,7 @@ export default function Dashboard({ code }) {
   const [searchResults, setSearchResults] = useState([]);
   const [playingTrack, setPlayingTrack] = useState();
   const [lyrics, setLyrics] = useState("");
-
   const navigate = useNavigate();
-
   window.history.pushState({}, null, "/dashboard");
 
   function chooseTrack(track) {
@@ -29,7 +27,7 @@ export default function Dashboard({ code }) {
     setSearch("");
     setLyrics("");
   }
-
+//add song to index page.
   function addToIndex(track) {
     axios
       .post(`${API}/songs`, track)
@@ -57,11 +55,13 @@ export default function Dashboard({ code }) {
       });
   }, [playingTrack]);
 
+  //make sure there is accessToken so you can use search.
   useEffect(() => {
     if (!accessToken) return;
     spotifyApi.setAccessToken(accessToken);
   }, [accessToken, search]);
 
+  //use search to find songs
   useEffect(() => {
     if (!search) return setSearchResults([]);
     if (!accessToken) return;
@@ -114,7 +114,6 @@ export default function Dashboard({ code }) {
           />
         ))}
 
-        {/* display lyrics */}
         {searchResults.length === 0 && (
           <div className="text-center" style={{ whiteSpace: "pre" }}>
             {lyrics}

@@ -1,14 +1,9 @@
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import HeartHealth from "./HeartHealth";
 const API = process.env.REACT_APP_API_URL;
 
 function Song({ song }) {
-
   return (
     <div className="singleCard Song text-center">
-      <img  src={song.album_url} alt={song.title} width="200px" />
+      <img src={song.album_url} alt={song.title} width="200px" />
 
       <a href={`/songs/${song.id}`} rel="noreferrer">
         <h4>
