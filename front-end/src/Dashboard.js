@@ -7,8 +7,10 @@ import Player from "./Player";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const client_Id = process.env.CLIENT_ID
+
 const spotifyApi = new SpotifyWebApi({
-  clientId: "b52a6ccefe1f4faf833b99dbc183c142",
+  clientId: `${client_Id}`
 });
 
 const API = process.env.REACT_APP_API_URL;
@@ -44,7 +46,7 @@ export default function Dashboard({ code }) {
   useEffect(() => {
     if (!playingTrack) return;
     axios
-      .get("http://localhost:3001/lyrics", {
+      .get(`${API}/lyrics`, {
         params: {
           track: playingTrack.title,
           artist: playingTrack.artist,

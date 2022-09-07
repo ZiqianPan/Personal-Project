@@ -11,7 +11,7 @@ export default function useAuth(code) {
   //get info on login.
   useEffect(() => {
     axios
-      .post(`{API}/login`, {
+      .post(`${API}/login`, {
         code,
       })
       .then((res) => {
@@ -29,7 +29,7 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return;
     const interval = setInterval(() => {
       axios
-        .post(`{API}/refresh`, {
+        .post(`${API}/refresh`, {
           refreshToken,
         })
         .then((res) => {
