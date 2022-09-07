@@ -8,12 +8,6 @@ export default function NavBar({ code }) {
           Better Spotify
         </Link>
       </h1>
-{/* 
-      {code ? (
-        <button>
-          <Link to="/dashboard"> Go To Spotify Search</Link>{" "}
-        </button>
-      ) : null} */}
 
       <button>
         {code ? (

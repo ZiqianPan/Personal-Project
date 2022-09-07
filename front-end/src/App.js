@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Login from "../src/Login";
-import { useState } from "react";
+import Login from "./Components/Login";
 
 // PAGES
 import Edit from "./Pages/Edit";
@@ -13,15 +12,12 @@ import Show from "./Pages/Show";
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
-import Dashboard from "./Dashboard";
+import Dashboard from "./Components/Dashboard";
 
 const code = new URLSearchParams(window.location.search).get("code");
 
 function App() {
-  // const [saveCode, setSaveCode] = useState(code)
-
   if (code) {
-    // setSaveCode(code);
     return (
       <div className="App">
         <Router>
