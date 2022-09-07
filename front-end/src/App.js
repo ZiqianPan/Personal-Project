@@ -15,10 +15,9 @@ import Show from "./Pages/Show";
 import NavBar from "./Components/NavBar";
 import Dashboard from "./Dashboard";
 
+const code = new URLSearchParams(window.location.search).get("code");
 
 function App() {
-  const code = new URLSearchParams(window.location.search).get("code");
-
   // const [saveCode, setSaveCode] = useState(code)
 
   if (code) {
@@ -28,7 +27,7 @@ function App() {
         <Router>
           <NavBar code={code} />
           <Routes>
-          <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard code={code} />} />
             <Route path="/songs" element={<Index />} />
             <Route path="/songs/new" element={<New />} />
