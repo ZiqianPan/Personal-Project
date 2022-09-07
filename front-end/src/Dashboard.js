@@ -22,7 +22,8 @@ export default function Dashboard({ saveCode }) {
   const [playingTrack, setPlayingTrack] = useState();
   const [lyrics, setLyrics] = useState("");
   const navigate = useNavigate();
-  window.history.pushState({}, null, "/dashboard");
+
+
 
   function chooseTrack(track) {
     setPlayingTrack(track);
