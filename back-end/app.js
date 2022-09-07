@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const songController = require("./controllers/songController");
 
 // ROUTES
+//return the tokens back to use spotify
 app.post("/login", (req, res) => {
   const code = req.body.code;
 
