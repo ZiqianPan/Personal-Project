@@ -9,9 +9,11 @@ export default function NavBar({ code }) {
         </Link>
       </h1>
 
-      <button>
-        {code ? <Link to="/dashboard">Go To Spotify</Link> : null}
-      </button>
+      {code ? (
+        <button>
+          <Link to="/dashboard"> Go To Spotify</Link>{" "}
+        </button>
+      ) : null}
 
       <button>
         {code ? (
