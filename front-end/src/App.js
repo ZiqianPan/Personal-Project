@@ -24,7 +24,6 @@ function App() {
           <NavBar code={code} />
           <Routes>
             <Route path="/" element={<Dashboard code={code} />} />
-            <Route path="/" element={<Home />} />
             <Route path="/songs" element={<Index />} />
             <Route path="/songs/new" element={<New />} />
             <Route exact path="/songs/:id" element={<Show />} />
