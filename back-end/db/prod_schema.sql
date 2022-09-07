@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS better_spotify;
-CREATE DATABASE better_spotify; 
 
 CREATE TABLE songs (
     id SERIAL PRIMARY KEY,
