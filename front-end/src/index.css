@@ -32,6 +32,18 @@ h4 {
   text-align: center;
 }
 
+h2 {
+  margin: 0;
+  /* font-size: 15px; */
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+  /* font-size: 15px; */
+  text-align: center;
+}
+
 .Snacks div {
   width: 150px;
   padding: 15px;
