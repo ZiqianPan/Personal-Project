@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const PORT = process.env.PORT;
 
-LISTEN
+// LISTEN
 app.listen(PORT, () => {
   console.log(`🥤 🍿 Snackin' on port ${PORT} 🥨 🌰 `);
 });
