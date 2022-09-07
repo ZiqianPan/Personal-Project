@@ -14,9 +14,11 @@ import Show from "./Pages/Show";
 import NavBar from "./Components/NavBar";
 import Dashboard from "./Dashboard";
 
-const code = new URLSearchParams(window.location.search).get("code");
 
 function App() {
+  const code = new URLSearchParams(window.location.search).get("code");
+
+
   if (code) {
     return (
       <div className="App">
