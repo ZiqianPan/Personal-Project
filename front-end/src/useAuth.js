@@ -3,7 +3,7 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 
-export default function useAuth(code) {
+export default function useAuth({code}) {
   const [accessToken, setAccessToken] = useState();
   const [refreshToken, setRefreshToken] = useState();
   const [expiresIn, setExpiresIn] = useState();

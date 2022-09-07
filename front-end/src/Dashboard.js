@@ -15,8 +15,8 @@ const spotifyApi = new SpotifyWebApi({
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function Dashboard({ saveCode }) {
-  const accessToken = useAuth(saveCode);
+export default function Dashboard({ code }) {
+  const accessToken = useAuth(code);
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [playingTrack, setPlayingTrack] = useState();
