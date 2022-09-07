@@ -1,4 +1,11 @@
-Link to my deployed Snack-O-Log APP: https://63041710726f7f25fb95cfdc--hilarious-raindrop-145204.netlify.app
+Link to my deployed Better Spotify APP: https://shimmering-sherbet-dc21b4.netlify.app/
+
+Shows a list of Songs recommanded by users. 
+Full CRUD functionality for Back-End. 
+Full RESTFUL Routes on Front-End. 
+
+Bonus Feature: Spotify auth, Searches, Build in Player. 
+usage of --> Spotify-web-api-node, body-Parser api, lyric-finder api. 
 
 
 =========================
