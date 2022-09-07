@@ -18,15 +18,17 @@ import Dashboard from "./Dashboard";
 function App() {
   const code = new URLSearchParams(window.location.search).get("code");
 
+  const [saveCode, setSaveCode] = useState(code)
 
-  if (code) {
+  if (saveCode) {
+    // setSaveCode(code);
     return (
       <div className="App">
         <Router>
-          <NavBar code={code} />
+          <NavBar saveCode={saveCode} />
           <Routes>
           <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard code={code} />} />
+            <Route path="/dashboard" element={<Dashboard saveCode={saveCode} />} />
             <Route path="/songs" element={<Index />} />
             <Route path="/songs/new" element={<New />} />
             <Route exact path="/songs/:id" element={<Show />} />

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function NavBar({ code }) {
+export default function NavBar({ saveCode }) {
   return (
     <nav>
       <h1>
@@ -10,7 +10,7 @@ export default function NavBar({ code }) {
       </h1>
 
       <button>
-      {code ?<Link to="/dashboard">Listen with Spotify</Link> :<Link to="/login">Listen with Spotify</Link>}
+      {saveCode ?<Link to="/dashboard">Listen with Spotify</Link> :<Link to="/login">Listen with Spotify</Link>}
 
         
       </button>
