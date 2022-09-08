@@ -23,12 +23,9 @@ export default function Dashboard( code ) {
   const [lyrics, setLyrics] = useState("");
   const navigate = useNavigate();
 
-
-
   function chooseTrack(track) {
     setPlayingTrack(track);
     setSearch("");
-    setLyrics("");
   }
 //add song to index page.
   function addToIndex(track) {
