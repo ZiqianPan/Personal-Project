@@ -6,7 +6,7 @@ export default function NavBar({ code }) {
       <h1>
         <Link to="/songs" style={{ color: "white", textDecoration: "none" }}>
           Better Spotify
-          <p style={{fontSize: "18px"}}>Objectively wrose But Subjectively better</p>
+          <p style={{fontSize: "18px"}}>Objectively worse But Subjectively better</p>
         </Link>
       </h1>
 
